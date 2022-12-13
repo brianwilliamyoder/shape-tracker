@@ -2,11 +2,16 @@ import { exportAllDeclaration } from '@babel/types';
 import Triangle from './../src/triangle.js';
 
 describe ('Triangle', () => {
+  
+  test('should correctly determine whether three lengths make an equilateral triangle', () => {
+    const equiTriangle = new Triangle(5,5,5)
+    expect(equiTriangle.checkType()).toEqual("equilateral triangle");
+  })
+  });
 
   test('should correctly determine whether three lengths make an isosceles triangle', () => {
     const isoscTriangle = new Triangle(5,5,7)
     expect (isoscTriangle.checkType()).toEqual("isosceles triangle");
-  });
   });
 
   test('should correctly determine whether three lengths make a scalene triangle', () => {
